@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<root>
+  <replacementdef>
+        <replacementname>HyperModifierFlag</replacementname>
+        <replacementvalue>ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L| ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L</replacementvalue>
+    </replacementdef>
+  <!-- 将capslock定义为hyper键,单击此键触发ESC, 组合键映射到下面的hyper+key的定义 -->
+    <item>
+        <name>定义hyper</name>
+        <identifier>private.capslock.def</identifier>
+        <autogen>
+            --KeyOverlaidModifier--
+            KeyCode::F19,
+            KeyCode::CONTROL_L,
+            ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L,
+            KeyCode::ESCAPE
+        </autogen>
+    </item>
+    
+    <item>
+        <name>hyper + key </name>        
+        <identifier>private.hyper_key.def</identifier>
+        <!-- 使用capslock + h j k l 实现方向键 -->
+        <autogen>--KeyToKey-- KeyCode::H, {{HyperModifierFlag}}, KeyCode::CURSOR_LEFT </autogen>
+        <autogen>--KeyToKey-- KeyCode::J, {{HyperModifierFlag}}, KeyCode::CURSOR_DOWN </autogen>
+        <autogen>--KeyToKey-- KeyCode::K, {{HyperModifierFlag}}, KeyCode::CURSOR_UP   </autogen>
+        <autogen>--KeyToKey-- KeyCode::L, {{HyperModifierFlag}}, KeyCode::CURSOR_RIGHT</autogen>
+
+        <!-- capslock + 空格 实现原有的大定锁定键功能 -->
+        <autogen>--KeyToKey-- KeyCode::SPACE,{{HyperModifierFlag}}, KeyCode::CAPSLOCK </autogen> 
+    </item>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_GoogleChrome</name>
+    <url type="file">/Applications/Google Chrome.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_WeChat</name>
+    <url type="file">/Applications/WeChat.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Sketch</name>
+    <url type="file">/Applications/Sketch.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_QQ</name>
+    <url type="file">/Applications/QQ.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Reminders</name>
+    <url type="file">/Applications/Reminders.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Calendar</name>
+    <url type="file">/Applications/Calendar.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_VIM</name>
+    <url type="file">/Applications/MacVim.app</url>
+  </vkopenurldef>
+
+  <replacementdef>
+    <replacementname>LAUNCHER_MODE_V2_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::G,
+          KeyCode::VK_OPEN_URL_APP_GoogleChrome,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::W,
+          KeyCode::VK_OPEN_URL_APP_WeChat,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::S,
+          KeyCode::VK_OPEN_URL_APP_Sketch,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::Q,
+          KeyCode::VK_OPEN_URL_APP_QQ,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::R,
+          KeyCode::VK_OPEN_URL_APP_Reminders,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::C,
+          KeyCode::VK_OPEN_URL_APP_Calendar,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::V,
+          KeyCode::VK_OPEN_URL_APP_VIM,
+        </autogen>
+      ]]>
+    </replacementvalue>
+  </replacementdef>
+</root>
