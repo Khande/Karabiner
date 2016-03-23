@@ -79,6 +79,11 @@
     <url type="file">/Applications/PhpStorm.app</url>
   </vkopenurldef>
 
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_MySQLWorkbench</name>
+    <url type="file">/Applications/MySQLWorkbench.app</url>
+  </vkopenurldef>
+
   <replacementdef>
     <replacementname>LAUNCHER_MODE_V2_EXTRA</replacementname>
     <replacementvalue>
@@ -135,6 +140,12 @@
           __KeyDownUpToKey__
           KeyCode::P,
           KeyCode::VK_OPEN_URL_APP_PhpStorm,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::E,
+          KeyCode::VK_OPEN_URL_APP_MySQLWorkbench,
         </autogen>
       ]]>
     </replacementvalue>
