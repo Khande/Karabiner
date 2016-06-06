@@ -25,6 +25,11 @@
         <autogen>--KeyToKey-- KeyCode::J, {{HyperModifierFlag}}, KeyCode::CURSOR_DOWN </autogen>
         <autogen>--KeyToKey-- KeyCode::K, {{HyperModifierFlag}}, KeyCode::CURSOR_UP   </autogen>
         <autogen>--KeyToKey-- KeyCode::L, {{HyperModifierFlag}}, KeyCode::CURSOR_RIGHT</autogen>
+        <!-- 使用capslock + 5 6 7 8 实现方向键 -->
+        <autogen>--KeyToKey-- KeyCode::5, {{HyperModifierFlag}}, KeyCode::F5</autogen>
+        <autogen>--KeyToKey-- KeyCode::6, {{HyperModifierFlag}}, KeyCode::F6</autogen>
+        <autogen>--KeyToKey-- KeyCode::7, {{HyperModifierFlag}}, KeyCode::F7</autogen>
+        <autogen>--KeyToKey-- KeyCode::8, {{HyperModifierFlag}}, KeyCode::F8</autogen>
 
         <!-- capslock + 空格 实现原有的大定锁定键功能 -->
         <autogen>--KeyToKey-- KeyCode::SPACE,{{HyperModifierFlag}}, KeyCode::CAPSLOCK </autogen>
@@ -61,7 +66,7 @@
 
   <vkopenurldef>
     <name>KeyCode::VK_OPEN_URL_APP_VIM</name>
-    <url type="file">/Applications/MacVim.app</url>
+    <url type="file">/usr/local/Cellar/macvim/7.4-101/MacVim.app</url>
   </vkopenurldef>
 
   <vkopenurldef>
@@ -84,13 +89,48 @@
     <url type="file">/Applications/MySQLWorkbench.app</url>
   </vkopenurldef>
 
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_PostMan</name>
+    <url type="file">/Users/huangfu/Applications/Chrome Apps.localized/Default fhbjgbiflinjbdggehcddcbncdddomop.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Xcode</name>
+    <url type="file">/Applications/Xcode.app</url>
+  </vkopenurldef>
+  <item>
+    <name>X打开Xcode，XX打开Simulator</name>
+    <identifier>private.x_launch_xcode</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::X,
+        KeyCode::VK_NONE,
+
+        Option::KEYTOKEY_DELAYED_ACTION,
+        KeyCode::VK_OPEN_URL_APP_Xcode,
+
+        Option::KEYTOKEY_DELAYED_ACTION_CANCELED_BY, KeyCode::X,
+        KeyCode::VK_OPEN_URL_APP_iPhoneSimulator,
+        KeyCode::VK_KEYTOKEY_DELAYED_ACTION_DROP_EVENT,
+      </autogen>
+  </item>
+
+  <item>
+    <name>Switch Profile</name>
+    <identifier>private.switch_profile</identifier>
+    <autogen>__KeyToKey__ KeyCode::KEY_1, {{HyperModifierFlag}},
+    KeyCode::VK_OPEN_URL_APP_Karabiner_Profile0</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_2, {{HyperModifierFlag}},
+    KeyCode::VK_OPEN_URL_APP_Karabiner_Profile1</autogen>
+  </item>
+
   <replacementdef>
     <replacementname>LAUNCHER_MODE_V2_EXTRA</replacementname>
     <replacementvalue>
       <![CDATA[
         <autogen>
           __KeyDownUpToKey__
-          KeyCode::G,
+          KeyCode::C,
           KeyCode::VK_OPEN_URL_APP_GoogleChrome,
         </autogen>
 
@@ -100,11 +140,11 @@
           KeyCode::VK_OPEN_URL_APP_WeChat,
         </autogen>
 
-        <autogen>
+        <!-- <autogen>
           __KeyDownUpToKey__
           KeyCode::S,
           KeyCode::VK_OPEN_URL_APP_Sketch,
-        </autogen>
+      </autogen> -->
 
         <autogen>
           __KeyDownUpToKey__
@@ -118,11 +158,11 @@
           KeyCode::VK_OPEN_URL_APP_Reminders,
         </autogen>
 
-        <autogen>
+        <!-- <autogen>
           __KeyDownUpToKey__
           KeyCode::C,
           KeyCode::VK_OPEN_URL_APP_Calendar,
-        </autogen>
+      </autogen> -->
 
         <autogen>
           __KeyDownUpToKey__
@@ -138,13 +178,25 @@
 
         <autogen>
           __KeyDownUpToKey__
-          KeyCode::P,
+          KeyCode::S,
           KeyCode::VK_OPEN_URL_APP_PhpStorm,
         </autogen>
 
         <autogen>
           __KeyDownUpToKey__
-          KeyCode::E,
+          KeyCode::P,
+          KeyCode::VK_OPEN_URL_APP_PostMan,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::N,
+          KeyCode::VK_OPEN_URL_APP_CornerStone,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::M,
           KeyCode::VK_OPEN_URL_APP_MySQLWorkbench,
         </autogen>
       ]]>
