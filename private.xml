@@ -66,7 +66,7 @@
 
   <vkopenurldef>
     <name>KeyCode::VK_OPEN_URL_APP_VIM</name>
-    <url type="file">/usr/local/Cellar/macvim/7.4-101/MacVim.app</url>
+    <url type="file">/usr/local/Cellar/macvim/7.4-104/MacVim.app</url>
   </vkopenurldef>
 
   <vkopenurldef>
@@ -90,8 +90,13 @@
   </vkopenurldef>
 
   <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_SequalPro</name>
+    <url type="file">/Applications/Sequel Pro.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
     <name>KeyCode::VK_OPEN_URL_APP_PostMan</name>
-    <url type="file">/Users/huangfu/Applications/Chrome Apps.localized/Default fhbjgbiflinjbdggehcddcbncdddomop.app</url>
+    <url type="file">/Applications/Postman.app</url>
   </vkopenurldef>
 
   <vkopenurldef>
@@ -122,6 +127,78 @@
     KeyCode::VK_OPEN_URL_APP_Karabiner_Profile0</autogen>
     <autogen>__KeyToKey__ KeyCode::KEY_2, {{HyperModifierFlag}},
     KeyCode::VK_OPEN_URL_APP_Karabiner_Profile1</autogen>
+  </item>
+
+  <item>
+    <name>C打开Chrome,CC打开CornerStone</name>
+    <identifier>private.CapsLock_C</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::C, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L,
+
+      Option::KEYTOKEY_DELAYED_ACTION,
+      KeyCode::VK_OPEN_URL_APP_GoogleChrome,
+
+      Option::KEYTOKEY_DELAYED_ACTION_CANCELED_BY, KeyCode::C,
+      KeyCode::VK_OPEN_URL_APP_CornerStone,
+      KeyCode::VK_KEYTOKEY_DELAYED_ACTION_DROP_EVENT,
+    </autogen>
+  </item>
+
+  <item>
+    <name>P打开PhpStorm,PP打开PostMan</name>
+    <identifier>private.CapsLock_P</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::P, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L,
+
+      Option::KEYTOKEY_DELAYED_ACTION,
+      KeyCode::VK_OPEN_URL_APP_PhpStorm,
+
+      Option::KEYTOKEY_DELAYED_ACTION_CANCELED_BY, KeyCode::P,
+      KeyCode::VK_OPEN_URL_APP_PostMan,
+      KeyCode::VK_KEYTOKEY_DELAYED_ACTION_DROP_EVENT,
+    </autogen>
+  </item>
+
+  <item>
+    <name>V打开VIM</name>
+    <identifier>private.CapsLock_V</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::V, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L,
+      KeyCode::VK_OPEN_URL_APP_VIM,
+    </autogen>
+  </item>
+
+  <item>
+    <name>打开WeChat</name>
+    <identifier>private.CapsLock_W</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::W, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L,
+      KeyCode::VK_OPEN_URL_APP_WeChat,
+    </autogen>
+  </item>
+
+  <item>
+    <name>S打开Sequal Pro</name>
+    <identifier>private.CapsLock_S</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::S, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L,
+      KeyCode::VK_OPEN_URL_APP_SequalPro,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Q打开QQ</name>
+    <identifier>private.CapsLock_Q</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::Q, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L,
+      KeyCode::VK_OPEN_URL_APP_QQ,
+    </autogen>
   </item>
 
   <replacementdef>
